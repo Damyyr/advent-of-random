@@ -1,0 +1,29 @@
+{
+  "name": "advent-of-random",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Damyyr/advent-of-random.git"
+  },
+  "author": "Damyyr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Damyyr/advent-of-random/issues"
+  },
+  "homepage": "https://github.com/Damyyr/advent-of-random#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "csv-parse": "^5.3.3",
+    "dotenv": "^16.0.3",
+    "eris": "^0.17.1",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "sqlite3": "^5.1.2"
+  }
+}
