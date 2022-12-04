@@ -1,0 +1,83 @@
+fs = 'fs' \require
+readline = 'readline' \require
+
+// Play around with objects --------------------
+// i1 = new Inventory(@ 100 200 500)
+// i2 = new Inventory(@ 44 880 98)
+
+// i1 ~printItems
+// r1 = i1 ~countItems
+
+// i2 ~printItems
+// r2 = i2 ~countItems
+// 'i2 contains ' + r2 + ' calories' print
+
+// Array manipulation 
+// a = @ 1 2 3
+// b = @ 4 5 6
+// c = a b array
+// print c
+// c = c a array
+// print c
+
+// ---------------------------------------------
+
+Inventory = class items ()
+
+Inventory :: 'countItems' = fun
+    this,items sum
+
+Inventory :: 'addItem' = fun item
+    this,items = this,items item array
+
+Inventory :: 'printItems' = fun
+    this,items each i (print i)
+
+// --- Read data from input
+// f = fun err data
+//     if err
+//         print err
+//     | else
+//         print data
+
+// Synchronous
+inputData = fs ~readFileSync '1-input.txt' 'utf8'
+// inputData = fs ~readFileSync '1-input-test.txt' 'utf8'
+
+// Async but not working
+// fs ~open '1-input.txt'
+//     f
+// filestream = fs ~createReadStream '1-input.txt'
+// reader = readline ~createInterface
+// | on 'error' f
+// ---
+
+// 1 ---------------------------------------------------------------------------
+
+// Split the return carriage sequence..
+splitted = inputData ~split '\n\n'
+inventories = 
+    splitted map d
+        if (d == '\n')
+            obj print
+        // ..then create an Inventory object re-splitting the string 
+        new Inventory(d ~split '\n')
+
+// inventories print
+
+inventories max [a ~countItems] ~countItems print
+
+// 2 ---------------------------------------------------------------------------
+
+f = [(b ~countItems) - (a ~countItems)]
+ordered = inventories order f
+ordered print
+first = ordered ~shift
+second = ordered ~shift
+third = ordered ~shift
+
+'1: ' + (first ~countItems) print
+'2: ' + (second ~countItems) print
+'3: ' + (third ~countItems) print
+
+array first second third sum [a ~countItems] print

@@ -40,6 +40,8 @@ Get the bot's `clientID` and the permission you want it to have, then authentica
 ## Challenges
 That are my resolutions using this bot.
 
+For -I think- a better ressource management and to not overload this project unnecessarily, each year will have a submodule where all necessary libraries/packages will be installed. These package will probably all be at the root of the year folder as we don't know if the same will could appear more than once.
+
 ## TODOs
 ### General
 - [ ] Track non-participating player
