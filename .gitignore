@@ -105,3 +105,6 @@ dist
 
 # SQlite db files
 db/**/*
+
+# Java files
+*.class
